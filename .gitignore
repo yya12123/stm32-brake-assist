@@ -1,0 +1,18 @@
+# build artifacts
+firmware/*.o
+firmware/*.elf
+firmware/*.map
+firmware/*.hex
+firmware/*.bin
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# logs / temp
+*.log
+*.tmp
+~$*
