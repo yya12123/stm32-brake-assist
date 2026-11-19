@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.md)
 
-> Undergraduate graduation project · STM32F103C8T6 · Proteus simulation + physical scale-model car
+> STM32F103C8T6 · Proteus simulation + physical scale-model car
 
 Press the brake pedal and the brake light brightens in stages. When the system detects an emergency-braking intent it automatically flashes the hazard lights, sounds the buzzer and pulls in a relay that stands in for the brake booster. In parallel an ultrasonic sensor keeps watching the distance ahead and raises a following-distance warning or a danger alarm. Everything runs bare-metal on an STM32F103C8T6 with direct register access and no HAL dependency.
 
@@ -79,7 +79,7 @@ Fields: pedal %, pedal rate, deceleration %, distance cm, echo width us, state i
 
 ## Measurements
 
-Ultrasonic calibration (see [docs/论文第5章_实验一_测距标定.md](docs/论文第5章_实验一_测距标定.md)):
+Ultrasonic calibration (see [docs/测距标定实验.md](docs/测距标定实验.md)):
 
 - The Proteus SRF04 model measures **66.4 us/cm**, not the 58 us/cm from the datasheet, so the simulation build uses `-DSIM_CAL` with 66 us/cm;
 - Over seven points from 20cm to 200cm the calibrated error stays within **2.5%** relative and 1.1cm absolute;
@@ -90,9 +90,9 @@ Ultrasonic calibration (see [docs/论文第5章_实验一_测距标定.md](docs/
 ```
 firmware/          bare-metal firmware, direct register access
   prebuilt/        prebuilt hex images
-docs/              design, wiring, Proteus, paper experiments
+docs/              wiring, Proteus, experiment notes
 data/              raw calibration data
-figures/           paper figures (Proteus screenshots)
+figures/           screenshots (Proteus)
 ```
 
 ## Notes
